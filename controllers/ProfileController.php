@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 class ProfileController extends Controller {
 
@@ -30,7 +30,7 @@ class ProfileController extends Controller {
         if(empty($_POST) || !isset($_POST['login']) || !isset($_POST['email'])) {
             echo json_encode(array("success" => false, "text" => "Ошибка при обновлении"));
         } else {
-            $this->model->updateProfile($profileId, $profileLogin, $profileEmail))
+            $this->model->updateProfile($profileId, $profileLogin, $profileEmail);
             echo json_encode(array("success" => true, "text" => "Данные изменены"));
         }
     }
