@@ -1,0 +1,7 @@
+AddDefaultCharset UTF-8
+php_value date.timezone 'Europe/Moscow'
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [L]
