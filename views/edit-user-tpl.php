@@ -22,7 +22,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="role">Роль</label>
             <div class="col-md-4">
-                <select name="role" data-ng-model="newRole" id="role" class="form-control" data-ng-init="role.id=0">
+                <select name="role" id="role" class="form-control" ng-options="option.name for option in roles track by option.id" data-ng-model="newRole">
                     <option value="{{role.id}}" data-ng-repeat="role in roles">{{role.name}}</option>
                 </select>
             </div>
