@@ -9,12 +9,18 @@ users.controller("usersController", function($scope, $http, $window){
             data: $.param({id: userId}),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).then(function(result){
-           $scope.userId = result.data.id;
-           $scope.userLogin = result.data.login;
-           $scope.userEmail = result.data.email;
-           $scope.userFullName = result.data.fullName;
-           $scope.userRole = result.data.role;
-           $scope.getRoles();
+            $scope.userId = result.data.id;
+            $scope.userLogin = result.data.login;
+            $scope.userEmail = result.data.email;
+            $scope.userFullName = result.data.fullName;
+            $scope.userRole = result.data.role;
+            for(var i=0; i<$scope.roles.length; i++) {
+                loc_val = $scope.roles[i];
+                if (loc_val.name==result.data.role) {
+                    $scope.newRole = loc_val;
+                    break;
+                }
+            }
         })
     }
 
@@ -66,6 +72,8 @@ users.controller("usersController", function($scope, $http, $window){
             $window.location.reload();
         });
     }
+
+    $scope.getRoles();
 
 })
 
