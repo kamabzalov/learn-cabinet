@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Июн 15 2018 г., 21:43
+-- Время создания: Июн 27 2018 г., 21:46
 -- Версия сервера: 10.0.35-MariaDB
 -- Версия PHP: 5.6.30
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- База данных: `codetoge_cabinet`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(1024) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `description`) VALUES
+(1, 'Теперь у нас есть мобильное приложение', 'Отличная новость - теперь вы можете работать с личным кабинетом через мобильное приложение'),
+(2, 'День рождения нашего генерального директора. Вот так', 'Завтра день рождения нашего ген.дира. Скидываемся по 10 рублей');
 
 -- --------------------------------------------------------
 
@@ -167,11 +187,18 @@ INSERT INTO `users` (`id`, `login`, `fullName`, `email`, `password`, `role_id`) 
 (54, 'ignat', 'Игнатьев Михаил', 'ignat@gmail.com', '424a25489e1a9f5abd57c4aeaa1ce71e', 2),
 (55, 'ignat', 'Игнатьев Михаил', 'ignat@gmail.com', '424a25489e1a9f5abd57c4aeaa1ce71e', 2),
 (56, 'ignat', 'Игнатьев Михаил', 'ignat@gmail.com', '424a25489e1a9f5abd57c4aeaa1ce71e', 2),
-(66, 'kam', 'kam', 'ok_kam90@mail.ru', '96e79218965eb72c92a549dd5a330112', 1);
+(66, 'kam', 'kam', 'ok_kam90@mail.ru', '96e79218965eb72c92a549dd5a330112', 1),
+(67, 'wergutt', 'wergut', 'wergut@wergut.ru', 'b0486b477a1699cbfe7a7a19f2a60ee0', 2);
 
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `orders`
@@ -231,7 +258,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
