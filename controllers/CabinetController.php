@@ -13,6 +13,7 @@ class CabinetController extends Controller {
 
         if(!$_SESSION['user']) {
             header("Location: /");
+            exit();
         }
 
         $this->pageData['title'] = "Кабинет";
