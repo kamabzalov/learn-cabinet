@@ -38,6 +38,7 @@ class ProfileController extends Controller {
     public function updatePassword() {
         if(!$_SESSION['user']) {
             header("Location: /");
+            exit();
         }
 
         if(empty($_POST) || !isset($_POST['newpass']) || !isset($_POST['repeatpass'])) {
