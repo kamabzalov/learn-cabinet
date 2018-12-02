@@ -31,6 +31,7 @@ class OrdersController extends Controller {
     public function index() {
         if(!$_SESSION['user']) {
             header("Location: /");
+            exit();
         }
         
         $this->pageData['title'] = "Детали заказа";
