@@ -29,6 +29,7 @@ class UsersController extends Controller{
 
         if(!$_SESSION['user']) {
             header("Location: /");
+            exit();
         }
 
         $this->pageData['permission'] = $_SESSION['role_id'];
