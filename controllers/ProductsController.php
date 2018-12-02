@@ -15,6 +15,7 @@ class ProductsController extends Controller {
 
         if(!$_SESSION['user']) {
             header("Location: /");
+            exit();
         }
 
         $allProducts = count($this->model->getAllProducts());
