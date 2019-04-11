@@ -25,6 +25,7 @@ class ProfileController extends Controller {
     public function updateProfile() {
         if(!$_SESSION['user']) {
             header("Location: /");
+            exit();
         }
 
         if(empty($_POST) || !isset($_POST['login']) || !isset($_POST['email'])) {
